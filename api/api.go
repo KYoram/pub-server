@@ -1,22 +1,14 @@
 package api
 
 import (
-	"net/http"
-	"regexp"
-
-	apiV1 "github.com/KYoram/pub-server/v1/api"
+	apiV1 "github.com/KYoram/pub-server/api/v1"
+	"github.com/go-chi/chi/v5"
 )
 
-func HandleApi(response http.ResponseWriter, request *http.Request) {
-	regex, err := regexp.Compile(`\/api\/v1(\/?(.+))?`)
-	if err != nil {
-		http.Error(response, "500 issue", http.StatusInternalServerError)
-	}
-
-	if regex.Match([]byte(request.URL.Path)) {
-		apiV1.HandleApiV1(response, request)
-		return
-	}
-
-	http.Redirect(response, request, "/api/v1", http.StatusPermanentRedirect)
+func SetupApiRoutes(r chi.Router) {
+	r.Group(func(r chi.Router) {
+		r.Route("/api", func(r chi.Router) {
+			apiV1.SetupV1Routes(r)
+		})
+	})
 }
