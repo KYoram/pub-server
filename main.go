@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/KYoram/pub-server/api"
-	"github.com/KYoram/pub-server/file"
+	"github.com/LeRoiDesPoissons/pub-server/api"
+	"github.com/LeRoiDesPoissons/pub-server/file"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/render"

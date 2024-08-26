@@ -1,7 +1,7 @@
 package apiV1
 
 import (
-	consumablesV1 "github.com/KYoram/pub-server/api/v1/consumables"
+	consumablesV1 "github.com/LeRoiDesPoissons/pub-server/api/v1/consumables"
 	"github.com/go-chi/chi/v5"
 )
 

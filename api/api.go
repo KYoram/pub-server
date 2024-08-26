@@ -1,7 +1,7 @@
 package api
 
 import (
-	apiV1 "github.com/KYoram/pub-server/api/v1"
+	apiV1 "github.com/LeRoiDesPoissons/pub-server/api/v1"
 	"github.com/go-chi/chi/v5"
 )
 
